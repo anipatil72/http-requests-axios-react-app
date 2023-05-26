@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import axios from 'axios';
-import { Route, NavLink, Switch } from "react-router-dom";
+import { Route, NavLink, Switch, Redirect } from "react-router-dom";
 
 import "./Blog.css";
 import Posts from "./Posts/Posts";
@@ -16,7 +16,7 @@ class Blog extends Component {
             <ul>
               <li>
                 <NavLink
-                  to="/"
+                  to="/posts"
                   exact
                   activeClassName="my-active"
                   activeStyle={{
@@ -45,9 +45,9 @@ class Blog extends Component {
                 <Route path="/" render={() => <h1>Home 2</h1>} /> */}
 
         <Switch>
-          <Route path="/" exact component={Posts} />
           <Route path="/new-post" component={NewPost} />
-          <Route path="/:id" exact component={FullPost} />
+          <Route path="/posts" component={Posts} />
+          <Redirect from="/" to="/posts" />
         </Switch>
       </div>
     );
