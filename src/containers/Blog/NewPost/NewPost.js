@@ -18,6 +18,7 @@ class NewPost extends Component {
 
   componentDidMount() {
     // console.log(useParams.id);
+    // If unauthorised :  this.props.history.replace("/posts");
     console.log(this.props);
   }
 
